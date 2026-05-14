@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:16
+
+    container_name: quiz-postgres
+
+    environment:
+      POSTGRES_DB: quizapp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: vishal
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+
+    container_name: quiz-backend
+
+    depends_on:
+      - postgres
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/quizapp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: vishal
+
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
