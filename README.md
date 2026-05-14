@@ -94,3 +94,98 @@ src/main/java/com/quizapp
 ├── security
 ├── service
 │   └── impl
+
+```
+---
+## ⚙️ Setup Instructions
+
+1️⃣ Clone Repository 
+- git clone https://github.com/Vishal987472/quizapp.git
+
+2️⃣ Configure Database
+
+Update Application.yml
+- spring:
+- datasource:
+- url: jdbc:postgresql://localhost:5432/quizapp
+- username: postgres
+- password: your_password
+
+3️⃣ Build Project
+
+- mvn clean package
+
+4️⃣ Run Application
+
+- mvn spring-boot:run
+
+---
+
+## 🐳 Docker Setup
+
+Run Using Docker Compose
+
+- docker compose up --build
+
+---
+
+## 🌐 Swagger API Documentation
+
+Open:
+
+- http://localhost:8080/swagger-ui/index.html
+
+### 🔑 Authentication
+
+Use the following APIs:
+
+Register
+
+- POST /api/auth/register
+
+Login
+
+- POST /api/auth/login
+
+Copy JWT token and use:
+
+- Bearer YOUR_TOKEN
+
+inside Swagger Authorize button.
+
+---
+
+### 📌 Main APIs
+
+| Module         | Endpoint              |
+| -------------- | --------------------- |
+| Authentication | `/api/auth/**`        |
+| Quiz APIs      | `/api/quizzes/**`     |
+| Question APIs  | `/api/questions/**`   |
+| Quiz Attempts  | `/api/attempts/**`    |
+| Leaderboards   | `/api/leaderboard/**` |
+
+
+---
+
+## 🔥 Advanced Features
+
+- JWT Authentication
+- Role-Based Authorization
+- Pagination & Filtering
+- Global Exception Handling
+- Analytics APIs
+- Dockerized Deployment
+- Enterprise Layered Architecture
+
+---
+
+## 👨‍💻 Author
+
+### Vishal
+MCA Student | Full Stack Developer | Backend Enthusiast
+
+GitHub:
+https://github.com/Vishal987472
+
+---
